@@ -82,3 +82,29 @@ Proses normalisasi dilakukan secara bertahap untuk menghilangkan redundansi data
 
 a) Bentuk Tidak Ternormalisasi (UNF) & 1NF (First Normal Form)
 Memastikan seluruh kolom bernilai atomik tunggal tanpa adanya repeating groups:
+
+| Nama Kolom | Jenis Kunci | Keterangan |
+|------------|-------------|------------|
+| **id_penelitian** | Primary Key (PK) | ID unik rekam nilai |
+| **nis** | - | Nomor Induk Siswa |
+| **nama siswa** |	- | Nama lengkap siswa |
+| **kode_mapel** |	- |	Kode unik mata pelajaran |
+| **nama_pelajaran** | - |	Nama mata pelajaran |
+| **kkm** |	- |	Standar kelulusan minimum |
+| **nilai asli** |	- |	Nilai mentah hasil ujian siswa |
+| **kode_guru**| - | Kode identitas guru |
+| **nama guru** | - | Nama lengkap guru penilai |
+
+b) Bentuk Normal Kedua (2NF)
+Memecah tabel induk agar seluruh atribut non-key bergantung penuh secara fungsional (fully functionally dependent) pada Primary Key tabel masing-masing:
+
+- Tabel Master Siswa: id_siswa (PK), nis, nama siswa, tanggal lahir.
+
+- Tabel Master Guru: id_guru (PK), kode_guru, nama_guru, no_telp.
+
+- Tabel Master Mapel: id_mapel (PK), id_guru (FK), kode_mapel, nama_pelajaran, kkm.
+
+- Tabel Transaksi Penilaian: id_penilaian (PK), id_siswa (FK), id_mapel (FK), nilai_asli.
+
+c) Bentuk Normal Ketiga (3NF)
+Seluruh tabel hasil pecahan 2NF di atas telah memenuhi kriteria Bentuk Normal Ketiga (3NF) karena tidak lagi memiliki ketergantungan transitif (transitive dependency) di mana atribut non-key bergantung pada atribut non-key lainnya.
