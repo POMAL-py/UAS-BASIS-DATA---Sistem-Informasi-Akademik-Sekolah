@@ -59,3 +59,26 @@ erDiagram
         int id_mapel FK "Relasi ke MAPEL"
         float nilai_asli "Skor Nilai Siswa"
     }
+```
+Deskripsi Entitas dan Atribut:
+- Siswa (Master): Menyimpan data diri peserta didik. PK: id_siswa. Atribut: nis (unik), nama siswa, dan tanggal lahir.
+
+- Guru (Master): Menyimpan data diri tenaga pendidik. PK: id_guru. Atribut: kode guru (unik), nama_guru, dan no telp.
+
+- Mata Pelajaran (Master): Menyimpan daftar kurikulum pelajaran. PK: id_mapel. FK: id_guru. Atribut: kode_mapel (unik), nama_pelajaran, dan kkm.
+
+- Penilaian (Transaksi Utama): Mencatat lembar evaluasi belajar. PK: id_penilaian. FK: id_siswa dan id_mapel. Atribut: nilai_asli.
+
+---
+
+### E. Penentuan Kardinalitas Relasi
+- Relasi Data Internal ($1:M$): Satu kode id_mapel yang sama dapat muncul berkali-kali di dalam tabel penilaian karena diambil oleh banyak siswa yang berbeda.
+- Relasi Penilai ($1:M$): Satu orang guru (dinilai_oleh) dapat melakukan penginputan nilai berkali-kali untuk banyak siswa dan mata pelajaran yang berbeda.
+
+---
+
+### F. Proses Normalisasi Database
+Proses normalisasi dilakukan secara bertahap untuk menghilangkan redundansi data serta mencegah terjadinya anomali data (insert, update, delete anomaly).
+
+a) Bentuk Tidak Ternormalisasi (UNF) & 1NF (First Normal Form)
+Memastikan seluruh kolom bernilai atomik tunggal tanpa adanya repeating groups:
