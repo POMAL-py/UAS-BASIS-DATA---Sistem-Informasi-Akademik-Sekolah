@@ -2,7 +2,6 @@
 ## PERANCANGAN DATABASE DAN APLIKASI CURD
 ### SISTEM INFORMASI AKADEMIK SEKOLAH
 
-
 ---
 
 ### A. Pemilihan Topik
@@ -27,7 +26,7 @@ Pengguna sistem terbagi menjadi dua aktor utama:
 ---
 
 ### D. Desain Entity Relationship Diagram (ERD)
-Berikut adalah visualisasi rancangan database ERD relasional yang merepresentasikan struktur tabel fisik pada sistem akademik sekolah menggunakan sintaks Mermaid (otomatis merender menjadi gambar di GitHub):
+Berikut adalah visualisasi rancangan database ERD relasional yang merepresentasikan struktur tabel fisik pada sistem akademik sekolah menggunakan sintaks Mermaid 
 
 ```mermaid
 erDiagram
