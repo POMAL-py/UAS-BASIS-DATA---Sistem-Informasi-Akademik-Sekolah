@@ -324,4 +324,4 @@ if(isset($_GET['hapus'])) {
 </body>
 </html>
 ```
-Note: Buka Browser dan akses alamat `http://127.0.0.1/mapel.php` atau `127.0.0.1/mapel.php`.
+Note: Buka Browser dan akses alamat `http://localhost/mapel.php` atau `127.0.0.1/mapel.php`.
